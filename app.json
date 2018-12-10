@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "page/movie/movie",
+    "page/cinema/cinema",
+    "page/cinema2/cinema2",
+    "page/my/my",
+    "page/logs/logs",
+    "page/feedback/feedback",
+    "page/cinema_detail/cinema_detail",
+    "page/movie_detail/movie_detail",
+    "page/trailer/trailer",
+    "page/city/city",
+    "page/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "比价",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#d81e06",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/movie/movie",
+        "iconPath": "image/movie.png",
+        "selectedIconPath": "image/movie_HL.png",
+        "text": "电影"
+      },
+      {
+        "pagePath": "page/cinema/cinema",
+        "iconPath": "image/cinema.png",
+        "selectedIconPath": "image/cinema_HL.png",
+        "text": "影院"
+      },
+      {
+        "pagePath": "page/my/my",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me_HL.png",
+        "text": "我"
+      }
+    ]
+  },
+  "debug": true
+}

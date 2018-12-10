@@ -1,0 +1,65 @@
+<view class="page">
+  <!-- <image wx:if="{{ movie.images.large }}" class="background" src="{{ movie.images.large }}" mode="aspectFill"/> -->
+  <block wx:if="{{ movie.title }}">
+    <view class="flex">
+      <!-- <view style="width:30%;" class="flex-clomn"> -->
+      <image class="poster" src="{{ movie.images.medium }}" mode="aspectFit" />
+      <!-- </view> -->
+      <view class="flex-clomn">
+        <view>
+          <text class="title">{{ movie.title }}({{ movie.year }})</text>
+        </view>
+        <text class="info">评分：<text wx:if="{{ movie.rating.average>0 }}">{{ movie.rating.average }}</text></text>
+        <text class="info">类型：<block wx:for="{{ movie.genres }}" wx:key="*this">{{ item }} </block></text>
+        <text class="info">导演：<block wx:for="{{ movie.directors }}" wx:key="id">{{ item.name }} </block></text>
+        <text class="info">主演：<block wx:for="{{ movie.casts }}" wx:key="id">{{ item.name }} </block></text>
+      </view>
+    </view>
+
+
+    <view class="summary">
+      <text class="label">摘要：</text>
+      <text class="content">{{ movie.summary }}</text>
+      <!-- <view class='fold {{!isFold && "active"}}' bindtap='foldToggle' /> -->
+    </view>
+
+    <view class="actors">
+      <text class="label">演员：</text>
+      <scroll-view scroll-x="true">
+        <view class="inner">
+          <view wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="id">
+            <view class="actor" data-img='{{cast.avatars.large}}' bindtap='onCastImagePre'>
+              <image src="{{ cast.avatars.large }}" mode="aspectFill" />
+              <text>{{ cast.name }}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class='photos'>
+      <!-- <text class='label'>预告片/剧照:</text> -->
+      <text class='label'>剧照:</text>
+      <scroll-view scroll-x>
+        <!-- <navigator wx:if='{{movie.trailers&&movie.trailers[0]}}' url='/page/trailer/trailer?id={{movie.id}}&resource={{movie.trailers[0].resource_url}}&title={{movie.trailers[0].title}}' class='trailer'>
+          <image class='image' src='{{movie.trailers[0].medium}}' />
+          <view class='front'>
+            <view class='icon'>
+              <image src='/image/white_play_icon.png' mode='widthFix' />
+            </view>
+          </view>
+        </navigator> -->
+        <block wx:for='{{movie.photos}}' wx:for-item='photo' wx:key='id'>
+          <view class='trailer' data-img='{{photo.image}}' bindtap='onImagePre'>
+            <image class='image' src='{{photo.image}}' />
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+    <zan-button wx:if="{{coming==0}}" size="large" type="danger" class="action" data-id="{{ movie.id }}" data-title="{{movie.title}}" bind:btnclick="onPriceComparison"> 
+      比价
+    </zan-button>
+  </block>
+
+</view>

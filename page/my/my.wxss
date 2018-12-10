@@ -1,0 +1,40 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50rpx 0;
+  align-items: center;
+  background: #e85654;
+  width: 100%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.btn {
+  width: 100%;
+  line-height: normal;
+  text-align: left;
+  padding-left: 0;
+  background-color: inherit;
+  font-size: inherit;
+}
+
+button::after {
+  border: none;
+}
+
+.icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  color: rgba(69, 90, 100, .8);
+}

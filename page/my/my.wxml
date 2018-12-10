@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆</button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view style="height:25rpx;background: #eee;width:100%;"></view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+       <zan-icon type="like-o" class="icon"/>
+      <button open-type='share' class='btn weui-cell__bd'>分享给朋友</button>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+<!-- 
+    <navigator url="/page/feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+      <zan-icon type="chat" class="icon"/>
+      <view class="weui-cell__bd">意见反馈</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator> 
+-->
+
+    <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="contactService">
+      <zan-icon type="phone" class="icon"/>
+      <view class="weui-cell__bd">联系客服</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="aboutMe">
+    <zan-icon type="contact" class="icon"/>
+      <view class="weui-cell__bd">关于我</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,98 @@
+<view class="page">
+  <view class="container" hidden='true'>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜电影" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchMovie" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜电影</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}" hidden="true">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>search suguestion1</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>search suguestion2</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view>
+    <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{ posters }}" wx:for-item="posters" wx:key="id">
+        <swiper-item>
+          <image src="{{posters.images.large}}" mode="aspectFill" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="weui-tab">
+    <!-- <view class="weui-navbar">
+      <block wx:for="{{tabs}}" wx:for-item="tab" wx:key="*this">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{tab}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view> -->
+
+      <zan-tab
+      list="{{ tab.list }}"
+      selected-id="{{ tab.selectedId }}"
+      bindtabchange="handleTabChange"
+    />
+
+
+    <view class="weui-tab__panel" style='padding-top:0px'>
+    <block wx:for="{{boards}}" wx:for-item="board" wx:key="index">
+      <view class="weui-tab__content kind-list" hidden="{{tab.selectedId != index}}">
+        <block wx:for="{{board.movies}}" wx:for-item="movie" wx:key="id">
+          <view class="flex item">
+            <navigator class="item_left" url="/page/movie_detail/movie_detail?id={{movie.id}}&title={{movie.title}}&coming={{tab.selectedId}}" hover-class="none">
+              <image src="{{movie.images.small}}" mode="aspectFill" />
+            </navigator>
+            <navigator class="flex_auto item_middle" url="/page/movie_detail/movie_detail?id={{movie.id}}&title={{movie.title}}&coming={{tab.selectedId}}" hover-class="none">
+              <view>
+                <text class="title">{{movie.title}}</text>
+              </view>
+              <view wx:if="{{movie.rating.average>0}}">
+                <text class="score">{{movie.rating.average}}分</text>
+              </view>
+              <view>
+                <text class="director">{{movie.directors[0].name}}</text>
+              </view>
+
+              <view>
+                <block wx:for="{{movie.casts}}" wx:for-item="cast" wx:key="id">
+                  <text class="cast" space='true'>{{cast.name}} </text>
+                </block>
+              </view>
+            </navigator>
+
+            <view class="item_right" wx:if="{{tab.selectedId==0}}">
+              <zan-button size="small" type="danger" data-id="{{movie.id}}" data-title="{{movie.title}}" bind:btnclick="onPriceComparison">比价</zan-button>
+            </view>
+          </view>
+        </block>
+        <view wx:if="{{!board.hasMore}}" class="reach-bottom">---到底啦---</view>
+      </view>
+      </block>
+      
+    </view>
+
+  </view>
+</view>

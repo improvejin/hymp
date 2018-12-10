@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "zan-icon": "/zan/icon/index",
+    "zan-popup": "/zan/popup/index",
+    "zan-select": "/zan/select/index"
+  }
+}

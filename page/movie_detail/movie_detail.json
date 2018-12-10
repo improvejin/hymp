@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zan-popup": "/zan/popup/index",
+    "zan-button": "/zan/btn/index"
+  }
+}

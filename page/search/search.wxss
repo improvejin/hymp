@@ -1,0 +1,38 @@
+/* page/search/search.wxss */
+
+.city{
+  display: flex;
+  align-items: center;
+  margin-right: 5rpx;
+  margin-left: 5rpx;
+}
+
+ .city:after{
+  content: ' ';
+  height: .5em;
+  width: .5em;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  margin-left: .5em;
+  margin-top: -0.35em;
+  transform: rotate(45deg);
+} 
+
+.searchbar-result {
+  margin-top: 10rpx;
+}
+
+.address, .distance{
+  font-size:12px; 
+  color: #888888;
+}
+
+.price {
+  color: #ff0000
+}
+
+.gray{
+  background-color: #ccc;
+}

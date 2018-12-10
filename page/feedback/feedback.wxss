@@ -1,0 +1,16 @@
+/* page/feedback/index.wxss */
+
+.feed {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.margin{
+  margin: 10px;
+}
+
+.button-sp-area{
+    margin: 0 auto;
+    width: 60%;
+}

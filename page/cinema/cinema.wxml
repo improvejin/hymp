@@ -1,0 +1,52 @@
+<!--page/cinema/cinema.wxml-->
+<view class="page">
+  <view class="page__head">
+
+    <view class="weui-search-bar">
+      <navigator url="/page/city/city" class="city">{{city}}</navigator>
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <input type="text" class="weui-search-bar__input" focus="{{inputShowed}}" bindfocus="onFocus" />
+        </view>
+        <label class="weui-search-bar__label" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜影院</view>
+        </label>
+      </view>
+    </view>
+
+    <zan-popup show="{{ showArea }}" type="left" bindclose="toggleAreaPopup">
+      <view class="pop-container pop-container-left">
+        <zan-select items="{{ areas }}" checkedValue="{{areas[areaIndex].value}}" activeColor="#4b0" bind:change="handleAreaChange" />
+      </view>
+    </zan-popup>
+
+    <view class='sort-header'>
+      <view bindtap="toggleAreaPopup" value="{{areaIndex}}" range="{{areas}}" class='area'>
+        <text>{{areas[areaIndex].name}}</text>
+        <zan-icon type="wap-nav" class="icon" />
+      </view>
+      <!-- <picker class="sort" bindchange="changeSort" value="{{sortByIndex}}" range="{{sortBy}}">
+        {{sortBy[sortByIndex]}}
+      </picker> -->
+      <view class='sort'>{{sortBy[sortByIndex]}}</view>
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <block wx:for-items="{{cinemas}}" wx:key="{{item.id}}">
+      <view class="weui-cells weui-cells_after-title">
+        <navigator url="/page/cinema_detail/cinema_detail?id={{item.id}}&movieId=-1&name={{item.name}}&addr={{item.addr}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <view>{{item.name}}</view>
+            <view class="address">{{item.addr}}</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">
+            <view class="price">￥{{item.min_price}}起</view>
+            <view class="distance">{{item.distance}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+</view>

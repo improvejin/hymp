@@ -1,0 +1,90 @@
+<!--page/cinema_detail/cinema_detail.wxml-->
+<view class="page">
+  <view class='header'>
+    <text class='addr'>{{cinemaAddr}}</text>
+    <view bindtap='showMap'>
+      <zan-icon type="location" style='margin-right:10rpx' />
+    </view>
+  </view>
+
+  <view>
+    <swiper class='swiper-box' indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" circular="{{circular}}" bindchange="movieChange" current='{{currentMovieIndex}}'>
+      <block wx:for="{{movies}}" wx:for-item="movie" wx wx:key="poster">
+        <swiper-item class="center">
+          <image src="{{movie.poster}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+
+      </block>
+    </swiper>
+  </view>
+
+  <view class="page__bd">
+
+    <view class="center">
+      <view>
+        <text space="true">{{currentMovie.name}} </text>
+        <text class="score" wx:if="{{currentMovie.score > 0}}">{{currentMovie.score}}分</text>
+      </view>
+      <view>
+        <text class="info" space="true">{{currentMovie.duration}} {{currentMovie.type}}</text>
+      </view>
+    </view>
+
+    <view class="weui-tab" wx:if="{{currentMoviePrices.length>0}}">
+      <!-- <view class="weui-navbar">
+        <block wx:for="{{currentMoviePrices}}" wx:key="date">
+          <view id="{{index}}" class="weui-navbar__item {{activeDateIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="scheduleTabClick">
+            <view class="weui-navbar__title">{{item.date}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view> -->
+
+    <zan-tab
+      list="{{ tab.dates }}"
+      selected-id="{{ tab.activeDateIndex }}"
+      bindtabchange="scheduleTabClick"
+    />
+
+      <view class="weui-tab__panel">
+        <block wx:for="{{currentMoviePrices}}" wx:for-item="day" wx:key="index">
+          <view class="weui-tab__content" hidden="{{tab.activeDateIndex != index}}">
+            <view class="kind-list">
+              <block wx:for="{{day.schedules}}" wx:key="begin">
+                <view class="kind-list__item">
+                  <view id="{{item.begin}}" class="weui-flex" bindtap="scheduleToggle">
+                    <view class="weui-flex__item">
+                      <view class="display-flex">
+                        <view class="start-end-time">{{item.begin}}</view>
+                        <view class="language-hall">{{item.language}}</view>
+                        <view class="price">最低￥{{item.min_price}}</view>
+                      </view>
+                      <view class="display-flex small-font-size">
+                        <view class="start-end-time">{{item.end}}散场</view>
+                        <view class="language-hall ">{{item.hall}}</view>
+                        <view class="total  {{ item.open && 'active'}}">{{item.num}}家比价</view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="{{item.open ? 'kind-list__item-bd_show' : 'item_hidden'}}">
+                    <view class="weui-cells {{item.open ? 'weui-cells_show' : 'item_hidden'}}">
+                      <block wx:for="{{item.prices}}" wx:for-item="p" wx:key="{{p.channel}}">
+                        <view class="weui-cell weui-cell_access">
+                          <view class="display-flex weui-cell__bd">
+                            <view class="channel">{{p.channel}}</view>
+                            <view class="price">￥{{p.price}}</view>
+                          </view>
+                          <view class="weui-cell__ft"></view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
