@@ -33,7 +33,7 @@ mp核心功能分成三个Tab页：
 
 单击电影列表项可进入电影详情也，查看当前电影详情信息。
 
-![GIF](https://thumbnail0.baidupcs.com/thumbnail/cb3bafc78df4ec10d9c5946c2113c019?fid=2202709176-250528-636357808382271&time=1544346000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-D%2B1NILPevl3taxt3iSUBbLaJJgw%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7948494193947621137&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![GIF](gif/20181209_170437_20181209170613.gif)
 
 #### 电影详情页
 
@@ -45,7 +45,7 @@ mp核心功能分成三个Tab页：
 - 剧照、预告片，单击预告片可播放
 - 比价按钮，可选择具体影院查看电影比价信息入口
 
-![GIF](https://thumbnail0.baidupcs.com/thumbnail/2be0b6163298cb7ff5ef80d636a6073a?fid=2202709176-250528-424602474924456&time=1544346000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-mM3%2FV5LKxBsqAdPwoxbbnUzs5pk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7948850378293029981&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![GIF](gif/20181209_171057_20181209172855.gif)
 
 ### 即将上映
 
@@ -71,13 +71,13 @@ mp核心功能分成三个Tab页：
 
 影院搜索框里用户可输入电影院名称或道路地址，借用百度map微信小程序js api提供的POI检索热词联想功能可根据用户的输入显示提示地址。用户输入或选择某个具体地址后，利用百度map逆地址解析将输入地址解析成经纬度，然后与当前城市所有影院计算距离排序后由近及远展示所有影院。
 
-![gif](https://thumbnail0.baidupcs.com/thumbnail/aa3298ad2027466593d36689f722b9f9?fid=2202709176-250528-87394533182568&time=1544346000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-ZKwN3qyGN5lABBppR1A0ecShF8Y%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7948800055281265791&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![gif](gif/20181209_171559_20181209171958.gif)
 
 ### 城市选择
 
 惠电影使用微信sdk定位用户位置经纬度信息，然后使用百度map sdk由经纬度获取到具体城市，默认显示当前城市影院列表,可通过城市选择更换目的地城市。城市选择组件基于[citySelect](https://github.com/chenjinxinlove/citySelect)实现。
 
-![gif](https://thumbnail0.baidupcs.com/thumbnail/8d909761ba7ab1d822209e43664f1c27?fid=2202709176-250528-586509014907617&time=1544346000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-n7Tywztt2PZGPoz9RcC29WTGVU8%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7948771580927247096&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![gif](gif/20181209_171811_20181209172329.gif)
 
 
 ### 影院详情
@@ -88,7 +88,7 @@ mp核心功能分成三个Tab页：
 ##### 影院地址
 展示影院详情地址，点击地址icon可打开地图查看位置和导航信息。
 
-![gif](https://thumbnail0.baidupcs.com/thumbnail/3d44aa302659e982cd2422ff71f2a67b?fid=2202709176-250528-260247419151929&time=1544428800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-OnYeS%2FF4FGwoHx1bldTOFJ8RJZA%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7971246961790090938&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![gif](gif/20181210_163604_20181210163850.gif)
 
 ##### 电影比较
 
@@ -96,13 +96,13 @@ mp核心功能分成三个Tab页：
 
 比价信息按可售卖日期分成多个可切换Tab,每个tab以列表项显示了当前电影的开场时间、结束时间、放映厅、渠道最低价、语言等信息，点击列表项可查看/隐藏所有渠道的价格信息，目前有猫眼、淘票票、糯米三个渠道。
 
-![GIF](https://thumbnail0.baidupcs.com/thumbnail/178fc86dc4489cc680e1ea5c6dccaa4e?fid=2202709176-250528-344656705129957&time=1544428800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-fku1GDTzXWpxhUaaq%2BxZUAyOGKo%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7971237865045650771&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![GIF](gif/20181210_163441_20181210163827.gif)
 
 ## 个人中心
 
 个人中心包括当前登录用户信息以及惠电影分享推荐、联系客服和关于我入口项。
 
-![gif](https://thumbnail0.baidupcs.com/thumbnail/158e6db45edd1121a0179b0cce1c7099?fid=2202709176-250528-225075024518071&time=1544346000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-qIEozM0%2BLIQz6iWSNf0%2BPczmqN8%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7949037809334398901&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![gif](gif/20181209_173659_20181209173829.gif)
 
 ## Todo
 
