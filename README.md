@@ -16,7 +16,7 @@ mp核心功能分成三个Tab页：
 
 一般影视网站首页都有最近热播视频幻灯视图，热映浮图与此类似，使用滑块试图容器[swiper](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)轮番展示8部最近热门电影海报大图。
 
-![gif](https://thumbnail0.baidupcs.com/thumbnail/1431e42d0ab2bc85dab2564e0bb2cbfe?fid=2202709176-250528-499308517288517&time=1544342400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-LB3Av0IHYue%2B6tyneUC67dFwoHs%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7948366642352537994&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![gif](gif/20181209_163448_20181209165818.gif)
 
 ### 正在热映
 
