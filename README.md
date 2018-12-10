@@ -3,7 +3,7 @@
 
 ## 扫描体验
 
-![image](https://thumbnail0.baidupcs.com/thumbnail/7951be9d8282f5552a43554bc1d91222?fid=2202709176-250528-419168454378902&time=1544432400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-mqXTWraZ43ySpZ7%2BAomIYu%2BM%2Bjw%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7971575583445634637&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
+![image](image/mp_share_20181210175958.jpg)
 
 mp核心功能分成三个Tab页：
 
