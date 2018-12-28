@@ -115,8 +115,6 @@ mp核心功能分成三个Tab页：
 - 影院按区域过滤、按价格排序
 - 更多渠道方价格信息
 
-## GitHub
 
-[GitHub地址](https://note.youdao.com/)
 
 
